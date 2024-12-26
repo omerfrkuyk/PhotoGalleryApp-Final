@@ -1,0 +1,91 @@
+﻿@model PhotoModel
+
+@* Generated from Custom Template. *@
+@* Model namespace using directive should be added to _ViewImports.cshtml. *@
+
+@{
+    var containerDivClass = "container";
+}
+@{
+    ViewData["Title"] = "Photo Details";
+}
+
+<div class="@containerDivClass">
+    <h3>@ViewData["Title"]</h3>
+    <hr />
+</div>
+
+@if (Model is not null)
+{
+<div class="@containerDivClass">
+    @if (TempData["Message"] is not null)
+    {
+    <p class="text-danger">
+        @TempData["Message"]
+    </p>
+    }
+    <div class="row mb-3">
+        <div class="col-2 fw-bold">
+            @Html.DisplayNameFor(model => model.isTakenStudio)
+        </div>
+        <div class="col-10">
+            @Html.DisplayFor(model => model.isTakenStudio)
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-2 fw-bold">
+                @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="col-10">
+                @Html.DisplayFor(model => model.Name)
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-2 fw-bold">
+            @Html.DisplayNameFor(model => model.PhotoDate)
+        </div>
+        <div class="col-10">
+            @Html.DisplayFor(model => model.PhotoDate)
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-2 fw-bold">
+            @Html.DisplayNameFor(model => model.ApertureValue)
+        </div>
+        <div class="col-10">
+            @Html.DisplayFor(model => model.ApertureValue)
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-2 fw-bold">
+            @Html.DisplayNameFor(model => model.ShutterSpeed)
+        </div>
+        <div class="col-10">
+            @Html.DisplayFor(model => model.ShutterSpeed)
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-2 fw-bold">
+                @Html.DisplayNameFor(model => model.PhotoTypes)
+        </div>
+        <div class="col-10">
+                @Html.DisplayFor(model => model.PhotoTypes)
+        </div>
+    </div>
+
+@* Can be uncommented and used for many to many relationships. ManyToManyRecord may be replaced with the related entiy name in the controller and views. *@
+    
+    <div class="row mb-3">
+        <div class="col-2 fw-bold">
+            <b>@Html.DisplayNameFor(model => model.Owners)</b>
+        </div>
+        <div class="col-10">
+            @Html.Raw(Model.Owners)
+        </div>
+    </div>
+    
+
+   
+    <a asp-action="Index">Back to List</a>
+</div>
+}
